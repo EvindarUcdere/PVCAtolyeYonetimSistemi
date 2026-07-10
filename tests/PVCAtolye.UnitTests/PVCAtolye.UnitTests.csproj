@@ -22,5 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\PVCAtolye.Domain\PVCAtolye.Domain.csproj" />
     <ProjectReference Include="..\..\src\PVCAtolye.Application\PVCAtolye.Application.csproj" />
+    <ProjectReference Include="..\..\src\PVCAtolye.Infrastructure\PVCAtolye.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
+

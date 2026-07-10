@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PVCAtolye.Application.Identity;
+using PVCAtolye.Infrastructure.Identity;
 using PVCAtolye.Infrastructure.Persistence;
+using PVCAtolye.Infrastructure.Seed;
 
 namespace PVCAtolye.Infrastructure;
 
@@ -15,6 +18,13 @@ public static class DependencyInjection
         {
             options.UseNpgsql(connectionString);
         });
+
+        services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
+        services.Configure<AdminSeedOptions>(configuration.GetSection(AdminSeedOptions.SectionName));
+        services.AddScoped<IPasswordHasher, PasswordHasher>();
+        services.AddScoped<IJwtTokenService, JwtTokenService>();
+        services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<DatabaseSeeder>();
 
         return services;
     }

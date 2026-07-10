@@ -81,3 +81,18 @@ npm.cmd run dev
 - Inno Setup kurulum paketi
 
 
+
+## Development admin
+
+Faz 2 development seed kullanicisi:
+
+```text
+username: admin
+password: Admin123!
+```
+
+API development ortaminda acildiginda migration uygulanir ve admin kullanicisi seed edilir.
+
+## Port notu
+
+Bilgisayarda 5432 portu baska bir PostgreSQL tarafindan kullaniliyorsa lokal `.env` dosyasinda `PVC_ATOLYE_POSTGRES_PORT=5433` kullanin ve API connection string portunu development icin 5433 yapin.

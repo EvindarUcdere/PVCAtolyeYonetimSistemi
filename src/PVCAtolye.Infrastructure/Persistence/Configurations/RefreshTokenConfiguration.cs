@@ -1,0 +1,17 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PVCAtolye.Domain.Identity;
+
+namespace PVCAtolye.Infrastructure.Persistence.Configurations;
+
+public sealed class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken>
+{
+    public void Configure(EntityTypeBuilder<RefreshToken> builder)
+    {
+        builder.ToTable("refresh_tokens");
+        builder.HasKey(refreshToken => refreshToken.Id);
+        builder.Property(refreshToken => refreshToken.TokenHash).HasMaxLength(512).IsRequired();
+        builder.HasIndex(refreshToken => refreshToken.TokenHash).IsUnique();
+        builder.HasOne(refreshToken => refreshToken.User).WithMany(user => user.RefreshTokens).HasForeignKey(refreshToken => refreshToken.UserId).OnDelete(DeleteBehavior.Cascade);
+    }
+}

@@ -2,6 +2,7 @@
 import { ConfigProvider } from 'antd';
 import trTR from 'antd/locale/tr_TR';
 import type { PropsWithChildren } from 'react';
+import { AuthProvider } from '../shared/auth/AuthProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,9 @@ export function AppProviders({ children }: PropsWithChildren) {
         },
       }}
     >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>{children}</AuthProvider>
+      </QueryClientProvider>
     </ConfigProvider>
   );
 }

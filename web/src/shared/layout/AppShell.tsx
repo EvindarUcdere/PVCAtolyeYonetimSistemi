@@ -5,13 +5,15 @@
   DollarOutlined,
   FileTextOutlined,
   InboxOutlined,
+  LogoutOutlined,
   SettingOutlined,
   ToolOutlined,
   TruckOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Typography } from 'antd';
+import { Button, Layout, Menu, Space, Typography } from 'antd';
 import { Outlet } from 'react-router-dom';
+import { useAuth } from '../../features/auth/useAuth';
 
 const { Header, Sider, Content } = Layout;
 
@@ -29,6 +31,8 @@ const menuItems = [
 ];
 
 export function AppShell() {
+  const auth = useAuth();
+
   return (
     <Layout className="app-shell">
       <Sider width={248} breakpoint="lg" collapsedWidth="0" className="app-sidebar">
@@ -40,7 +44,12 @@ export function AppShell() {
       </Sider>
       <Layout>
         <Header className="app-header">
-          <Typography.Text strong>Faz 1 Altyapi</Typography.Text>
+          <Space>
+            <Typography.Text strong>{auth.user?.displayName}</Typography.Text>
+            <Button icon={<LogoutOutlined />} onClick={auth.logout}>
+              Cikis
+            </Button>
+          </Space>
         </Header>
         <Content className="app-content">
           <Outlet />

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PVCAtolye.Domain.Audit;
 using PVCAtolye.Domain.Identity;
+using PVCAtolye.Domain.Settings;
 
 namespace PVCAtolye.Infrastructure.Persistence;
 
@@ -13,6 +14,18 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
     public DbSet<RolePermission> RolePermissions => Set<RolePermission>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
+    public DbSet<CompanyProfile> CompanyProfiles => Set<CompanyProfile>();
+    public DbSet<Warehouse> Warehouses => Set<Warehouse>();
+    public DbSet<UnitOfMeasure> UnitOfMeasures => Set<UnitOfMeasure>();
+    public DbSet<MaterialCategory> MaterialCategories => Set<MaterialCategory>();
+    public DbSet<ProductType> ProductTypes => Set<ProductType>();
+    public DbSet<ColorDefinition> ColorDefinitions => Set<ColorDefinition>();
+    public DbSet<GlassType> GlassTypes => Set<GlassType>();
+    public DbSet<ProfileSeries> ProfileSeries => Set<ProfileSeries>();
+    public DbSet<AccessoryType> AccessoryTypes => Set<AccessoryType>();
+    public DbSet<ProductionStage> ProductionStages => Set<ProductionStage>();
+    public DbSet<PaymentMethod> PaymentMethods => Set<PaymentMethod>();
+    public DbSet<NumberSequenceSetting> NumberSequenceSettings => Set<NumberSequenceSetting>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

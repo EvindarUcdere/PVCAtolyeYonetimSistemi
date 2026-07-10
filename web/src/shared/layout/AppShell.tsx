@@ -12,7 +12,7 @@
   UserOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, Space, Typography } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../features/auth/useAuth';
 
 const { Header, Sider, Content } = Layout;
@@ -32,6 +32,9 @@ const menuItems = [
 
 export function AppShell() {
   const auth = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selectedKey = location.pathname.startsWith('/settings') ? 'settings' : 'dashboard';
 
   return (
     <Layout className="app-shell">
@@ -40,7 +43,20 @@ export function AppShell() {
           <Typography.Title level={4}>PVC Atolye</Typography.Title>
           <Typography.Text>Yonetim Sistemi</Typography.Text>
         </div>
-        <Menu mode="inline" selectedKeys={['dashboard']} items={menuItems} />
+        <Menu
+          mode="inline"
+          selectedKeys={[selectedKey]}
+          items={menuItems}
+          onClick={({ key }) => {
+            if (key === 'dashboard') {
+              navigate('/');
+            }
+
+            if (key === 'settings') {
+              navigate('/settings');
+            }
+          }}
+        />
       </Sider>
       <Layout>
         <Header className="app-header">

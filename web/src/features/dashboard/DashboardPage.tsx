@@ -2,8 +2,8 @@
 import { Alert, Card, Col, Row, Space, Statistic, Table, Tag, Typography } from 'antd';
 
 const modules = [
-  { key: 'auth', name: 'Kimlik ve Yetki', phase: 'Faz 2', status: 'Planlandi' },
-  { key: 'settings', name: 'Ayarlar ve Tanimlar', phase: 'Faz 3', status: 'Planlandi' },
+  { key: 'auth', name: 'Kimlik ve Yetki', phase: 'Faz 2', status: 'Tamamlandi' },
+  { key: 'settings', name: 'Ayarlar ve Tanimlar', phase: 'Faz 3', status: 'Hazirlaniyor' },
   { key: 'customers', name: 'Musteri Yonetimi', phase: 'Faz 4', status: 'Planlandi' },
   { key: 'quotes', name: 'Teklif ve Siparis', phase: 'Faz 6-7', status: 'Planlandi' },
 ];
@@ -26,15 +26,15 @@ export function DashboardPage() {
       <div>
         <Typography.Title level={2}>Proje Altyapisi</Typography.Title>
         <Typography.Text type="secondary">
-          Backend, frontend, veritabani ve gelistirme ortami Faz 1 kapsaminda hazirlaniyor.
+          Backend, frontend, kimlik altyapisi ve ana tanimlar yerel calisma icin hazirlaniyor.
         </Typography.Text>
       </div>
 
       <Alert
         type="success"
         showIcon
-        message="Faz 1 hedefi"
-        description="Bu ekranda henuz is modulu yoktur. Amac, sonraki fazlar icin guvenilir ve genisletilebilir uygulama kabugunu hazirlamaktir."
+        message="Sistem temeli"
+        description="Kimlik dogrulama, yetki politikasi, veritabani migrationlari ve ana ayarlar modulu sonraki is fazlari icin temel olusturur."
       />
 
       <Row gutter={[16, 16]}>

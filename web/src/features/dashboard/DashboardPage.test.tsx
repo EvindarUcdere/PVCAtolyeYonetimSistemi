@@ -4,7 +4,7 @@ import { AppProviders } from '../../app/AppProviders';
 import { DashboardPage } from './DashboardPage';
 
 describe('DashboardPage', () => {
-  it('renders phase one shell content', () => {
+  it('renders system foundation content', () => {
     render(
       <AppProviders>
         <DashboardPage />
@@ -12,7 +12,7 @@ describe('DashboardPage', () => {
     );
 
     expect(screen.getByText('Proje Altyapisi')).toBeInTheDocument();
-    expect(screen.getByText('Faz 1 hedefi')).toBeInTheDocument();
+    expect(screen.getByText('Sistem temeli')).toBeInTheDocument();
   });
 });
 

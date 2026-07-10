@@ -1,4 +1,4 @@
-﻿# Build outputs
+# Build outputs
 bin/
 obj/
 dist/
@@ -38,3 +38,13 @@ backups/
 
 # Uploads
 uploads/
+
+# Local package caches
+.nuget/
+.npm-cache/
+
+
+# TypeScript build metadata
+*.tsbuildinfo
+
+

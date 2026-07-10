@@ -1,0 +1,11 @@
+﻿@PVCAtolye.Api_HostAddress = http://localhost:5080
+
+GET {{PVCAtolye.Api_HostAddress}}/health
+Accept: application/json
+
+###
+
+GET {{PVCAtolye.Api_HostAddress}}/api/system/info
+Accept: application/json
+
+###

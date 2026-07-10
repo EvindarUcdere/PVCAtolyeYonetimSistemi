@@ -1,0 +1,61 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #f4f6f8;
+  color: #172026;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  background: #ffffff !important;
+  border-right: 1px solid #e7eaee;
+}
+
+.brand-block {
+  min-height: 88px;
+  padding: 18px 20px 12px;
+  border-bottom: 1px solid #e7eaee;
+}
+
+.brand-block h4.ant-typography {
+  margin: 0;
+  color: #17362d;
+}
+
+.app-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e7eaee;
+}
+
+.app-content {
+  padding: 24px;
+}
+
+.page-stack {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 16px;
+  }
+}

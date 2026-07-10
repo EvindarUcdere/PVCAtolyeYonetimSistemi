@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PVCAtolye.Api/PVCAtolye.Api.csproj" />
+    <Project Path="src/PVCAtolye.Application/PVCAtolye.Application.csproj" />
+    <Project Path="src/PVCAtolye.Domain/PVCAtolye.Domain.csproj" />
+    <Project Path="src/PVCAtolye.Infrastructure/PVCAtolye.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PVCAtolye.IntegrationTests/PVCAtolye.IntegrationTests.csproj" />
+    <Project Path="tests/PVCAtolye.UnitTests/PVCAtolye.UnitTests.csproj" />
+  </Folder>
+</Solution>

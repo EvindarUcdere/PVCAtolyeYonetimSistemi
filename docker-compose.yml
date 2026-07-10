@@ -1,0 +1,34 @@
+﻿services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pvc-atolye-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PVC_ATOLYE_POSTGRES_DB:-pvc_atolye}
+      POSTGRES_USER: ${PVC_ATOLYE_POSTGRES_USER:-pvc_atolye}
+      POSTGRES_PASSWORD: ${PVC_ATOLYE_POSTGRES_PASSWORD:-pvc_atolye_dev}
+    ports:
+      - "${PVC_ATOLYE_POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pvc_atolye_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PVC_ATOLYE_POSTGRES_USER:-pvc_atolye} -d ${PVC_ATOLYE_POSTGRES_DB:-pvc_atolye}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: pvc-atolye-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pvcatolye.local
+      PGADMIN_DEFAULT_PASSWORD: pvc_atolye_dev
+    ports:
+      - "5050:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pvc_atolye_postgres_data:

@@ -1,0 +1,40 @@
+﻿# Build outputs
+bin/
+obj/
+dist/
+build/
+node_modules/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+appsettings.Development.local.json
+appsettings.Production.json
+
+# Logs
+logs/
+*.log
+
+# User/local files
+*.user
+*.suo
+
+# Test artifacts
+TestResults/
+coverage/
+.coverage/
+
+# Database / backups
+*.bak
+*.backup
+*.dump
+backups/
+
+# Uploads
+uploads/

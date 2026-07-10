@@ -34,7 +34,11 @@ export function AppShell() {
   const auth = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const selectedKey = location.pathname.startsWith('/settings') ? 'settings' : 'dashboard';
+  const selectedKey = location.pathname.startsWith('/settings')
+    ? 'settings'
+    : location.pathname.startsWith('/customers')
+      ? 'customers'
+      : 'dashboard';
 
   return (
     <Layout className="app-shell">
@@ -54,6 +58,10 @@ export function AppShell() {
 
             if (key === 'settings') {
               navigate('/settings');
+            }
+
+            if (key === 'customers') {
+              navigate('/customers');
             }
           }}
         />

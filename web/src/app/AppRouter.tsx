@@ -1,5 +1,6 @@
 ﻿import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { LoginPage } from '../features/auth/LoginPage';
+import { CustomersPage } from '../features/customers/CustomersPage';
 import { DashboardPage } from '../features/dashboard/DashboardPage';
 import { SettingsPage } from '../features/settings/SettingsPage';
 import { ProtectedRoute } from '../shared/auth/ProtectedRoute';
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: 'settings',
         element: <SettingsPage />,
+      },
+      {
+        path: 'customers',
+        element: <CustomersPage />,
       },
     ],
   },

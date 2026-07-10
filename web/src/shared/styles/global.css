@@ -62,9 +62,29 @@ body {
   width: min(320px, 100%);
 }
 
+.page-heading-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.customer-toolbar {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.customer-toolbar .ant-input-affix-wrapper {
+  width: min(420px, 100%);
+}
+
 @media (max-width: 768px) {
   .app-content {
     padding: 16px;
+  }
+
+  .page-heading-row {
+    flex-direction: column;
   }
 }
 

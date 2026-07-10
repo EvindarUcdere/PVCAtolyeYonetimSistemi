@@ -3,8 +3,8 @@ import { Alert, Card, Col, Row, Space, Statistic, Table, Tag, Typography } from 
 
 const modules = [
   { key: 'auth', name: 'Kimlik ve Yetki', phase: 'Faz 2', status: 'Tamamlandi' },
-  { key: 'settings', name: 'Ayarlar ve Tanimlar', phase: 'Faz 3', status: 'Hazirlaniyor' },
-  { key: 'customers', name: 'Musteri Yonetimi', phase: 'Faz 4', status: 'Planlandi' },
+  { key: 'settings', name: 'Ayarlar ve Tanimlar', phase: 'Faz 3', status: 'Tamamlandi' },
+  { key: 'customers', name: 'Musteri Yonetimi', phase: 'Faz 4', status: 'Hazirlaniyor' },
   { key: 'quotes', name: 'Teklif ve Siparis', phase: 'Faz 6-7', status: 'Planlandi' },
 ];
 

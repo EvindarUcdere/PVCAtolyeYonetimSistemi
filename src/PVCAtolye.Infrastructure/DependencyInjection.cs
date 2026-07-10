@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PVCAtolye.Application.Customers;
 using PVCAtolye.Application.Identity;
 using PVCAtolye.Application.Settings;
+using PVCAtolye.Infrastructure.Customers;
 using PVCAtolye.Infrastructure.Identity;
 using PVCAtolye.Infrastructure.Persistence;
 using PVCAtolye.Infrastructure.Seed;
@@ -26,6 +28,7 @@ public static class DependencyInjection
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<ICustomerService, CustomerService>();
         services.AddScoped<ISettingsService, SettingsService>();
         services.AddScoped<DatabaseSeeder>();
 
